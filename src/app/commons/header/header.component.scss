@@ -1,0 +1,81 @@
+.header-container {
+  background-color: #fff;
+  padding: 0 64px;
+}
+
+.header-container__title {
+  margin: 0 24px 0 80px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  color: #1f2f33;
+}
+
+gp-header-main ::ng-deep .mainHeader {
+  background: transparent;
+  .header__title-content {
+   color: black;
+    .title {
+      font-weight: normal;
+    }
+  }
+  .header__right {
+    align-items: center;
+  }
+  .info__name-block {
+    flex-direction: row;
+    .info__username {
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: normal;
+      color: #1f2f33;
+      margin-right: 8px;
+    }
+    .info__description {
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: normal;
+      color: #6f8ea1;
+      margin-right: 8px;
+    }
+
+  }
+}
+
+ui-button ::ng-deep .headerButtons {
+  background: transparent;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  border: 0;
+  cursor: pointer;
+  .btn__text{
+    font-weight: normal;
+  }
+}
+
+ui-button ::ng-deep .headerButtons:hover:not([disabled]) {
+  background: transparent;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  border: 0;
+  cursor: pointer;
+}

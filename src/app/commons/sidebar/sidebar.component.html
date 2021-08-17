@@ -1,0 +1,22 @@
+<ui-toggle-sidebar [uiTheme]="SidebarThemesByDirective.props.themeSidebar"
+                   [isExpanded]="uiToggleSidebarProps.isExpanded" (mouseenter)="uiToggleSidebarProps.toggleSidebar()"
+                   (mouseleave)="uiToggleSidebarProps.toggleSidebar()">
+  <div class="sidebar-logo">
+    <ui-icon [icon]="uiToggleSidebarProps.icons.logo"></ui-icon>
+    <div class="sidebar-logo__text" *ngIf="uiToggleSidebarProps.isExpanded">Мониторинг аварийного и непригодного жилья</div>
+  </div>
+
+
+  <ui-button [text]="uiToggleSidebarProps.isExpanded && 'Адресные программы'"
+             [uiTheme]="SidebarThemesByDirective.props.themeButtons" routerLink="/address-programs">
+    <ui-icon [icon]="uiToggleSidebarProps.icons.addressIcon"></ui-icon>
+  </ui-button>
+  <ui-button [text]="uiToggleSidebarProps.isExpanded && 'Аварийные дома'"
+             [uiTheme]="SidebarThemesByDirective.props.themeButtons" routerLink="/emergency-housing">
+    <ui-icon [icon]="uiToggleSidebarProps.icons.emergencyIcon"></ui-icon>
+  </ui-button>
+  <ui-button [text]="uiToggleSidebarProps.isExpanded && 'Контракты на переселение'"
+             [uiTheme]="SidebarThemesByDirective.props.themeButtons">
+    <ui-icon [icon]="uiToggleSidebarProps.icons.contractsIcon"></ui-icon>
+  </ui-button>
+</ui-toggle-sidebar>

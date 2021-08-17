@@ -1,0 +1,69 @@
+<div class="address-program-card-container">
+  <app-main-header [title]="title"></app-main-header>
+  <div class="address-program-container__inner">
+
+    <div class="address-program-card-container__inner-body">
+      <div class="address-program-card-container__inner-title">Добавление адресной программы</div>
+      <div class="address-program-card-container__inner-inputs">
+        <div class="input">
+          <span>Наименование адресной программы</span>
+          <gp-input
+            [formControl]="control"
+            type="text"
+            [showClearButton]="true"
+          ></gp-input>
+        </div>
+        <div class="input">
+          <ui-fake-app-component>
+            <span>Тип адресной программы</span>
+            <ui-select
+              [formControl]="control"
+              [source]="selectSource"
+            ></ui-select>
+          </ui-fake-app-component>
+        </div>
+        <div class="input">
+          <gp-calendar
+          label="Дата начала"
+          [inRow]="dateControl.inRow"
+          [validateOnInit]="false"
+          [showValidationMessage]="dateControl.showValidationMessage"
+          [formControl]="dateControl.formControl({
+          nullable: false,
+          disabled: false
+      })">
+        </gp-calendar>
+          </div>
+        <div class="input"><gp-calendar
+          label="Дата окончания"
+          [inRow]="dateControl.inRow"
+          [validateOnInit]="false"
+          [showValidationMessage]="dateControl.showValidationMessage"
+          [formControl]="dateControl.formControl({
+          nullable: false,
+          disabled: false
+      })">
+        </gp-calendar></div>
+
+      </div>
+      <div class="address-program-card-container__inner-title">Сведения об этапах программы</div>
+      <div class="address-program-card-container__inner-table">
+        <ui-button
+          text="Добавить"
+          [style.height.px]="50"
+          [style.width.px]="128"
+          [uiTheme]="addressProgramCardThemes.props.tableButtons"
+        >
+          <ui-icon [icon]="icon" ></ui-icon>
+        </ui-button>
+        <gp-table
+          style="height: 550px"
+          [source]="source.source"
+          [columns]="source.columns"
+          [uiTheme]="addressProgramCardThemes.props.tableTheme"
+        ></gp-table>
+      </div>
+    </div>
+  </div>
+</div>
+

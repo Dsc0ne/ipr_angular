@@ -1,0 +1,13 @@
+<div class="header-container">
+  <gp-header-main [titleContent]=title [uiTheme]="headerThemes.props.mainHeader">
+    <ng-container gp-header-main-user-info>
+      <ui-button [uiTheme]="headerThemes.props.headerButtons">
+        <ui-icon [icon]="headerThemes.icons.notificationsIcon"></ui-icon>
+      </ui-button>
+<!--      <gp-user-info [userInfoData]="infoData.userInfoData"  [uiTheme]="headerThemes.props.mainHeader"></gp-user-info>-->
+      <ui-button [uiTheme]="headerThemes.props.headerButtons">
+        <ui-icon [icon]="headerThemes.icons.exitIcon"></ui-icon>
+      </ui-button>
+    </ng-container>
+  </gp-header-main>
+</div>
