@@ -1,13 +1,19 @@
 
 /** Общие стили таблицы**/
-gp-pagination-table ::ng-deep .tableTheme {
-
-  table{
+gp-table ::ng-deep .tableTheme {
+  .grid-cell{
+    cursor: pointer;
+  }
+  .grid-cell.selected > gp-table-cell {
+    opacity: 0.9;
+    background-color: rgba(187, 187, 187, 0.47);
+  }
+  ui-grid{
     width: 100%;
-    background: #ffffff;
+    background: #ff0000;
     tr {
       &:hover {
-        background-color: #f2f3f5;
+        background-color: #0053ff;
         cursor: pointer;
       }
       td{
@@ -92,7 +98,8 @@ gp-table ::ng-deep .tableTheme {
 }
 
 /** Пагинатор**/
-gp-pagination-table ::ng-deep .tableTheme {
+gp-table ::ng-deep .tableTheme {
+
   .paginator__counters {
     .paginator-label-content {
       .paginator-label-content__label {
@@ -134,6 +141,10 @@ gp-pagination-table ::ng-deep .tableTheme {
       color: black
     }
   }
+}
+
+ui-paginator {
+  margin-top: 140px;
 }
 
 /** Обычные кнопки таблицы **/

@@ -1,0 +1,37 @@
+<gp-modal
+  (modalClose)="onModalClose($event)"
+  (save)="onModalSave()"
+  (cancel)="onModalClose($event)"
+  [isCloseButtonVisible]="true"
+  [isFooter]="true"
+  [modalTitle]="'Модальное окно'"
+>
+  <div >
+    <div [formGroup]="myGroup" class="modal-form">
+      <div class="modal-form-field__name">
+        <label>Наименование программы</label>
+        <input formControlName="addressName" />
+      </div>
+      <div class="modal-form-field__second-level">
+        <div class="modal-form-field__type">
+          <label>Тип программы</label>
+          <input formControlName="addressType" />
+        </div>
+        <div class="modal-form-field__status">
+          <label>Статус заявки</label>
+          <input formControlName="addressStatus" />
+        </div>
+        <div class="modal-form-field__date-start">
+          <label>Дата начала</label
+          ><input formControlName="addressDateStart" />
+        </div>
+        <div class="modal-form-field__date-end">
+          <label>Дата окончания</label
+          ><input formControlName="addressDateEnd" />
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</gp-modal>

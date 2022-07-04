@@ -3,40 +3,47 @@ import { CommonModule } from '@angular/common';
 
 import { AddressProgramsRoutingModule } from './address-programs-routing.module';
 import {AddressProgramComponent} from '../address-program/address-program.component';
+import {AddressProgramModalComponent} from '../address-program-modal/address-program-modal.component';
 import {
-  ButtonModule,
-  FakeAppModule,
-  IconModule,
-  InputCompositionModule,
-  SelectModule,
-  TableModule,
-  ThemeModule,
+    ButtonModule,
+    FakeAppModule,
+    IconModule,
+    InputCompositionModule, InputSearchModule, ModalCompositionModule, PaginatorModule,
+    SelectModule,
+    TableModule,
+    ThemeModule,
 } from '@parma/gp-uikit-components';
 import {ReactiveFormsModule} from '@angular/forms';
-import {CalendarModule, ComponentsKendoModule} from '@parma/gp-uikit-components-kendo';
-import {IntlModule} from '@progress/kendo-angular-intl';
 import {CommonsModule} from '../../commons/commons.module';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
-  declarations: [
-    AddressProgramComponent,
-  ],
-  imports: [
-    CommonModule,
-    AddressProgramsRoutingModule,
-    ButtonModule,
-    IconModule,
-    TableModule,
-    ThemeModule,
-    InputCompositionModule,
-    FakeAppModule,
-    SelectModule,
-    ReactiveFormsModule,
-    ComponentsKendoModule,
-    CalendarModule,
-    IntlModule,
-    CommonsModule
-  ]
+    declarations: [
+        AddressProgramComponent,
+        AddressProgramModalComponent
+    ],
+    exports: [
+        AddressProgramModalComponent
+    ],
+    imports: [
+        CommonModule,
+        AddressProgramsRoutingModule,
+        ButtonModule,
+        IconModule,
+        TableModule,
+        ThemeModule,
+        InputCompositionModule,
+        FakeAppModule,
+        SelectModule,
+        ReactiveFormsModule,
+        CommonsModule,
+        PaginatorModule,
+        ModalCompositionModule,
+        MatInputModule,
+        MatDatepickerModule,
+        InputSearchModule
+    ]
 })
 export class AddressProgramsModule { }

@@ -1,50 +1,70 @@
 <div class="address-program-container">
   <app-main-header [title]="title"></app-main-header>
   <div class="address-program-container__body">
-  <div class="address-program-container__buttons">
-    <div class="address-program-container__buttons-left">
-      <ui-button
-        text="Добавить"
-        [style.height.px]="50"
-        [style.width.px]="128"
-        [uiTheme]="AddressThemes.props.tableButtons"
-        routerLink="/address-program-card"
-      >
-        <ui-icon [icon]="addIcon" ></ui-icon>
-      </ui-button>
-      <ui-button
-        [style.height.px]="40"
-        [style.width.px]="40"
-        [uiTheme]="AddressThemes.props.whiteButtonDisabled"
-      >
-        <ui-icon [icon]="editIcon" ></ui-icon>
-      </ui-button>
-      <ui-button
-        [style.height.px]="40"
-        [style.width.px]="40"
-        [uiTheme]="AddressThemes.props.whiteButtonDisabled"
-      >
-        <ui-icon [icon]="deleteIcon" ></ui-icon>
-      </ui-button>
+    <div class="address-program-container__buttons">
+      <div class="address-program-container__buttons-container">
+        <div class="address-program-container__buttons-left">
+          <ui-button
+                  text="Добавить"
+                  [style.height.px]="50"
+                  [style.width.px]="128"
+                  [uiTheme]="AddressThemes.props.tableButtons"
+                  (click)="openModal()"
+          >
+            <ui-icon [icon]="addIcon"></ui-icon>
+          </ui-button>
+          <ui-button
+                  [style.height.px]="40"
+                  [style.width.px]="40"
+                  [disabled]="disabledButton"
+                  (click)="editRow($event)"
+                  [uiTheme]="AddressThemes.props.whiteButton"
+          >
+            <ui-icon [icon]="editIcon"></ui-icon>
+          </ui-button>
+        </div>
+        <div class="address-program-container__buttons-right">
+          <ui-button
+                  [style.height.px]="40"
+                  [style.width.px]="40"
+                  [uiTheme]="AddressThemes.props.whiteButton"
+          >
+            <ui-icon [icon]="refreshIcon"></ui-icon>
+          </ui-button>
+        </div>
+      </div>
     </div>
-    <div class="address-program-container__buttons-right">
-      <ui-button
-        [style.height.px]="40"
-        [style.width.px]="40"
-        [uiTheme]="AddressThemes.props.whiteButton"
-      >
-        <ui-icon [icon]="refreshIcon" ></ui-icon>
-      </ui-button>
+    <div class="address-program-container__table">
+      <gp-table
+        style="height: 100%"
+        [source]="tableDataSource"
+        [columns]="columns"
+        [getItemKeyFn]="getItemKeyFn"
+        [getItemParentKeyFn]="getItemParentKeyFn"
+        [getItemLevel$]="getItemLevel$"
+        [getIsItemExpandable$]="getIsItemExpandable$"
+        [getIsItemExpanded$]="getIsItemExpanded$"
+        (cellClick)="cellClick($event)"
+        [uiTheme]="AddressThemes.props.tableTheme"
+      ></gp-table>
+
+
     </div>
-  </div>
-  <div class="address-program-container__table">
-    <gp-pagination-table
-      style="height: 100%"
-      [source]="source.source"
-      [columns]="source.columns"
-      [uiTheme]="AddressThemes.props.tableTheme"
-    ></gp-pagination-table>
-  </div>
+        <ui-paginator
+                [itemsCount]="itemsCount"
+                [currentPage]="currentPage"
+                [uiTheme]="AddressThemes.props.tableTheme"
+                (currentPageChange)="getCurrentPage($event)"
+                (pageSizeChange)="getPageSize($event)"
+        ></ui-paginator>
+    <div class="address-program-container__modal">
+      <app-address-program-modal
+        *ngIf="showModal"
+        [modalData]="rowData"
+        (onClose)="closeModal($event)"
+        (onSave)="addData($event)"
+      >
+      </app-address-program-modal>
+    </div>
   </div>
 </div>
-

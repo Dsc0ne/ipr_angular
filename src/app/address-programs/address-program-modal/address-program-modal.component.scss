@@ -1,0 +1,74 @@
+body {
+  height: auto;
+}
+
+ui-modal .header {
+  background-color: transparent;
+}
+.modal-form-field__name,.modal-form-field__type,.modal-form-field__status,.modal-form-field__date-start,.modal-form-field__date-end {
+  display: flex;
+  flex-direction: column;
+}
+.modal-form-field__name {
+  margin: 0 auto 30px auto;
+  max-width: 500px;
+  border-bottom: 1px solid #0000002e;
+  padding-bottom: 30px;
+}
+.modal-form-field__name label {
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+.modal-form-field__name input {
+  height: 25px;
+  border-radius: 5px;
+}
+
+.modal-form-field__second-level {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.modal-form-field__type input {
+  height: 25px;
+  border-radius: 5px;
+}
+
+
+.modal-form-field__type label {
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+.modal-form-field__status input {
+  height: 25px;
+  border-radius: 5px;
+}
+
+.modal-form-field__status label {
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+.modal-form-field__date-start input {
+  height: 25px;
+  border-radius: 5px;
+}
+
+.modal-form-field__date-start label {
+  font-size: 13px;
+  opacity: 0.5;
+}
+.modal-form-field__date-end input {
+  height: 25px;
+  border-radius: 5px;
+}
+
+.modal-form-field__date-end label {
+  font-size: 13px;
+  opacity: 0.5;
+}
+
